@@ -49,6 +49,23 @@ Gone are the days of sterile enterprise software. The dashboard is powered by a 
 
 ---
 
+## 🌐 API Documentation
+
+The Express backend exposes several aggregated metric endpoints available at `http://localhost:3001/api`:
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/employees` | `GET` | Paginated list of all employees (supports `?page` and `?limit`) |
+| `/api/stats/performance-distribution` | `GET` | Aggregated employee counts mapped to performance score brackets |
+| `/api/stats/employees-by-location` | `GET` | Headcount breakdown sorted by office location |
+| `/api/stats/employees-by-job-title` | `GET` | Headcount sorted by specific job titles |
+| `/api/stats/learning-journey` | `GET` | Matrix mapping of employees to training course completions |
+| `/api/stats/compensation-by-department` | `GET` | Max, Min, and Average salary groupings by department |
+| `/api/stats/performance-vs-compensation` | `GET` | Raw dataset for rendering compensation & performance scatter plots |
+| `/api/stats/top-performers` | `GET` | Returns the absolute top 10 ranked employees globally |
+
+---
+
 ## 🛠️ Quick Start Guide
 
 You are 4 commands away from running this entire platform!
@@ -84,5 +101,5 @@ Navigate your browser to `http://localhost:5173` to see it in action!
 ---
 
 <div align="center">
-  <i>Developed with ❤️ by <a href="https://github.com/koushik-v-s">KOUSHIK V S</a> for the Hackathon</i>
+  <i>Developed with 🧠 by <a href="https://github.com/koushik-v-s">KOUSHIK V S</a> for the Hackathon</i>
 </div>
