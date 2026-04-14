@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+/* ── Tailwind v4 Theme ─────────────────────────────────────────────── */
+@theme {
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #111118;
+  --color-bg-card: #16161f;
+  --color-bg-elevated: #1e1e2e;
+
+  --color-accent-violet: #7c3aed;
+  --color-accent-cyan: #06b6d4;
+  --color-accent-amber: #f59e0b;
+
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.16);
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── Base  ──────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Scrollbar (dark) ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.6);
+}
+
+/* ── Skeleton shimmer ──────────────────────────────────────────────── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-card) 25%,
+    var(--color-bg-elevated) 50%,
+    var(--color-bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* ── Recharts tooltip override ─────────────────────────────────────── */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+/* ── Glass card utility ────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(22, 22, 31, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.08);
+}
+
+/* ── Gradient text ─────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
